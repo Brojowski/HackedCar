@@ -23,7 +23,7 @@ function puts(error, stdout, stderr)
     console.log(stdout);
 }
 
-function writePin(pin, val)
+function digitalWrite(pin, val)
 {
     exec("gpio -g write " + pin + " " + val);
 }
