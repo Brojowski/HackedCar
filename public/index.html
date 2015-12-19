@@ -6,13 +6,20 @@
         <title></title>
         <script src="/javascripts/app.js"></script>
         <style>
-            #stream {
-                height: auto;
-                width: 100%;
+            #stream{
+                max-width: 100%;
+                max-height:100%;
+                bottom:0;
+                left:0;
+                margin:auto;
+                overflow:auto;
+                position: fixed;
+                right:0;
+                top:0;
             }
         </style>
     </head>
     <body ng-app="app" ng-controller="ctrlr" ng-keydown="send($event,1)" ng-keyup="send($event,0)">
-            <img id="stream" src="http://10.70.6.39:8000/?action=stream"/>
+            <img id="stream" style="height:100%; width:100%;" src="http://10.70.8.149:8000/?action=stream"/>
     </body>
 </html>
