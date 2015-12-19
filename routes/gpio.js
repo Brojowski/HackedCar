@@ -124,7 +124,8 @@ module.exports = function ()
             {
                 if (on_off === 0)
                 {
-                    servoStop(CAM_Up);
+                    //servoStop(CAM_Up);
+                    digitalWrite(CAM_Up,LOW);
                 }else{
                     console.log("Cam up start")
                     digitalWrite(CAM_Up,HIGH);
