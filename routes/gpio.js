@@ -107,6 +107,11 @@ module.exports = function ()
         ,
         down: function (on_off)
         {
+            if (d != on_off)
+            {
+                digitalWrite(CAM_Down,on_off);
+            }
+            d = on_off;
         }
     };
 };
