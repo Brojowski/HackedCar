@@ -28,7 +28,7 @@ app.get('/', function (req, res)
 
 app.get('/javascripts/app.js', function (req, res)
 {
-    res.sendFile(__dirname + "/javascripts/app.js");
+    res.sendFile(__dirname + "/public/javascripts/app.js");
 })
 
 app.post('/commands', function (req, res)
