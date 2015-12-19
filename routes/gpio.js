@@ -6,19 +6,16 @@
  TODO: This File Will Have To Be Debugged At The Event
  */
 
-var io = require("pi-gpio");
+var sys = require("sys");
+var exec = require("child_process").exec;
+function puts(error, stdout, stderr){ sys.puts(stdout);}
+exec("ls -la",puts);
 
 //open required pins
 //pins.open() --ect
 module.exports = function ()
 {
-    io.open(3, "output", function (err)
-    {
-        io.write(3, 1, function ()
-        {
-            io.close(3);
-        });
-    });
+
 
     return {
         //TODO: How do we control?
