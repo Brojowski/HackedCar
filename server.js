@@ -26,6 +26,11 @@ app.get('/', function (req, res)
     res.sendFile(__dirname + '/public/index.html');
 });
 
+app.get('/javascripts/app.js', function (req, res)
+{
+    res.sendFile(__dirname + "/javascripts/app.js");
+})
+
 app.post('/commands', function (req, res)
 {
     var cmd = req.body.cmd;
@@ -50,7 +55,5 @@ app.post('/commands', function (req, res)
 
     }
 });
-
-app.use("/public",express.static('public'));
 
 app.listen(8080);
