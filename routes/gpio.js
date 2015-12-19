@@ -92,9 +92,19 @@ module.exports = function ()
         //camera control
         camLeft: function (on_off)
         {
+            if (cl != on_off)
+            {
+                digitalWrite(CAM_Left,on_off);
+            }
+            cl = on_off;
         },
         camRight: function (on_off)
         {
+            if (cr != on_off)
+            {
+                digitalWrite(CAM_Right,on_off);
+            }
+            cr = on_off;
         },
         up: function (on_off)
         {
