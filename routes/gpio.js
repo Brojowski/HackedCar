@@ -20,7 +20,6 @@ module.exports = function ()
 
 
     return {
-        //TODO: How do we control?
         //car control
         forward: function ()
         {
