@@ -98,16 +98,9 @@ module.exports = function ()
         },
         up: function (on_off)
         {
-            console.log("Cam up: " + on_off);
             if (u != on_off)
             {
-                if (on_off === 0)
-                {
-                    digitalWrite(CAM_Up,LOW);
-                }else{
-                    console.log("Cam up start")
-                    digitalWrite(CAM_Up,HIGH);
-                }
+                digitalWrite(CAM_Up,on_off);
             }
             u = on_off;
         }
