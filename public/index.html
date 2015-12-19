@@ -12,7 +12,7 @@
             }
         </style>
     </head>
-    <body ng-app="app" ng-controller="ctrlr" ng-keypress="send($event)">
+    <body ng-app="app" ng-controller="ctrlr" ng-keydown="send($event,1)" ng-keyup="send($event,0)">
             <img id="stream" src="http://10.70.6.39:8000/?action=stream"/>
     </body>
 </html>

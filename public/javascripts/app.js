@@ -6,10 +6,10 @@ angular.module('app', [])
 
 function ctrlr($scope,$http)
 {
-    $scope.send = function(event)
+    $scope.send = function(event,power)
     {
         console.log(String.fromCharCode(event.keyCode));
 
-        $http.post("/commands",{cmd:String.fromCharCode(event.keyCode)});
+        $http.post("/commands:"+power,{cmd:String.fromCharCode(event.keyCode)});
     }
 }

@@ -9,23 +9,19 @@
 var sys = require("util");
 var exec = require("child_process").exec;
 
-const HIGH = 1;
-const LOW = 0;
-
 const W_PIN = 2;
 const S_PIN = 3;
 const A_PIN = 14;
 const D_PIN = 15;
 
-
-function puts(error, stdout, stderr)
-{
-    console.log(stdout);
-}
+var f = 0;
+var b = 0;
+var r = 0;
+var l = 0;
 
 function digitalWrite(pin, val)
 {
-    exec("gpio -g write " + pin + " " + val);
+    exec("gpio -g write " + pin + " " + val, console.log);
 }
 
 
@@ -35,22 +31,37 @@ module.exports = function ()
 {
     return {
         //car control
-        forward: function ()
+
+        forward: function (on_off)
         {
-            digitalWrite(W_PIN,HIGH);
-            digitalWrite(W_PIN,LOW);
+            if (f != on_off)
+            {
+                digitalWrite(W_PIN, on_off);
+            }
+            f = on_off;
         },
         backwards: function ()
         {
-        },
+            if (b != on_off)
+            {
+                digitalWrite(S_PIN, on_off);
+            }
+            b = on_off;        },
         turnLeft: function ()
         {
+            if (l != on_off)
+            {
+                digitalWrite(A_PIN, on_off);
+            }
+            l = on_off;
         },
         turnRight: function ()
         {
-        },
-        setSpeed: function (speed)
-        {
+            if (r != on_off)
+            {
+                digitalWrite(D_PIN, on_off);
+            }
+            r = on_off;
         },
 
         //camera control

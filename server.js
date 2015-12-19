@@ -29,19 +29,19 @@ app.get('/', function (req, res)
 app.get('/javascripts/app.js', function (req, res)
 {
     res.sendFile(__dirname + "/public/javascripts/app.js");
-})
+});
 
-app.post('/commands', function (req, res)
+app.post('/commands:power', function (req, res)
 {
-    var cmd = req.body.cmd;
     res.sendStatus(200);
+    var cmd = req.body.cmd;
     cmd = cmd.toUpperCase();
-    console.log(cmd);
+    var pwr = parseInt(req.params.power.charAt(1));
     switch (cmd)
     {
         case "W":
             //function
-            route_io_pins.forward();
+            route_io_pins.forward(pwr);
             break;
         case "A":
             route_io_pins.turnLeft();
