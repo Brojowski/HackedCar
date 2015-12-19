@@ -52,7 +52,15 @@ app.post('/commands:power', function (req, res)
         case "D":
             route_io_pins.turnRight(pwr);
             break;
+        case "I":
 
+            break;
+        case "K":
+            break;
+        case "J":
+            break;
+        case "L":
+            break;
     }
 });
 
