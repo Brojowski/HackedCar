@@ -38,7 +38,7 @@ module.exports = function ()
         forward: function ()
         {
             digitalWrite(W_PIN,HIGH);
-            digitalWrite(W_PIN,HIGH);
+            digitalWrite(W_PIN,LOW);
         },
         backwards: function ()
         {
