@@ -12,11 +12,11 @@ var io = require("pi-gpio");
 //pins.open() --ect
 module.exports = function ()
 {
-    io.open(21, "output", function (err)
+    io.open(2, "output", function (err)
     {
-        io.write(21, 1, function ()
+        io.write(2, 1, function ()
         {
-            io.close(16);
+            io.close(2);
         });
     });
 
