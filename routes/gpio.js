@@ -40,14 +40,14 @@ module.exports = function ()
             }
             f = on_off;
         },
-        backwards: function ()
+        backwards: function (on_off)
         {
             if (b != on_off)
             {
                 digitalWrite(S_PIN, on_off);
             }
             b = on_off;        },
-        turnLeft: function ()
+        turnLeft: function (on_off)
         {
             if (l != on_off)
             {
@@ -55,7 +55,7 @@ module.exports = function ()
             }
             l = on_off;
         },
-        turnRight: function ()
+        turnRight: function (on_off)
         {
             if (r != on_off)
             {
