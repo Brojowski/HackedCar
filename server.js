@@ -53,13 +53,16 @@ app.post('/commands:power', function (req, res)
             route_io_pins.turnRight(pwr);
             break;
         case "I":
-
+            route_io_pins.up(pwr);
             break;
         case "K":
+            route_io_pins.down(pwr);
             break;
         case "J":
+            route_io_pins.camLeft(pwr);
             break;
         case "L":
+            route_io_pins.camRight(pwr);
             break;
     }
 });
