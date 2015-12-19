@@ -8,23 +8,37 @@
 
 var sys = require("util");
 var exec = require("child_process").exec;
-function puts(error, stdout, stderr){ console.log(stdout);}
-exec("gpio -g write 2 1",puts);
-exec("gpio -g write 2 0", puts);
+
+const HIGH = 1;
+const LOW = 0;
+
+const W_PIN = 2;
+const S_PIN = 3;
+const A_PIN = 14;
+const D_PIN = 15;
+
+
+function puts(error, stdout, stderr)
+{
+    console.log(stdout);
+}
+
+function writePin(pin, val)
+{
+    exec("gpio -g write " + pin + " " + val);
+}
 
 
 //open required pins
 //pins.open() --ect
 module.exports = function ()
 {
-
-
     return {
         //car control
         forward: function ()
         {
-            exec("gpio -g write 2 1",puts);
-            exec("gpio -g write 2 0", puts);
+            digitalWrite(W_PIN,HIGH);
+            digitalWrite(W_PIN,HIGH);
         },
         backwards: function ()
         {
