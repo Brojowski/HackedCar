@@ -44,13 +44,13 @@ app.post('/commands:power', function (req, res)
             route_io_pins.forward(pwr);
             break;
         case "A":
-            route_io_pins.turnLeft();
+            route_io_pins.turnLeft(pwr);
             break;
         case "S":
-            route_io_pins.backwards();
+            route_io_pins.backwards(pwr);
             break;
         case "D":
-            route_io_pins.turnRight();
+            route_io_pins.turnRight(pwr);
             break;
 
     }
