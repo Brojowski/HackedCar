@@ -118,6 +118,7 @@ module.exports = function ()
         },
         up: function (on_off)
         {
+            console.log("Cam up: " + on_off);
             if (u != on_off)
             {
                 if (on_off === 0)
