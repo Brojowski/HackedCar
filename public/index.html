@@ -6,20 +6,25 @@
         <title></title>
         <script src="/javascripts/app.js"></script>
         <style>
-            #stream{
-                max-width: 100%;
-                max-height:100%;
-                bottom:0;
-                left:0;
-                margin:auto;
-                overflow:auto;
-                position: fixed;
-                right:0;
-                top:0;
+            html, body
+            {
+                height: 100%;
+                width: 100%;
+                margin: 0;
+            }
+            #betterstream
+            {
+                background: url("http://10.70.8.149:8000/?action=stream");
+                background-position: center;
+                background-size: contain;
+                background-color: black;
+                background-repeat: no-repeat;
+                height: 100%;
+                width: 100%;
             }
         </style>
     </head>
     <body ng-app="app" ng-controller="ctrlr" ng-keydown="send($event,1)" ng-keyup="send($event,0)">
-            <img id="stream" style="height:100%; width:100%;" src="http://10.70.8.149:8000/?action=stream"/>
+        <div id="betterstream"></div>
     </body>
 </html>
