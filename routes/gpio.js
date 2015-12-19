@@ -22,6 +22,8 @@ module.exports = function ()
         //car control
         forward: function ()
         {
+            exec("gpio -g write 2 1",puts);
+            exec("gpio -g write 2 0", puts);
         },
         backwards: function ()
         {
