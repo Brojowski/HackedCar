@@ -39,27 +39,6 @@ function digitalWrite(pin, val)
     exec("gpio -g write " + pin + " " + val, console.log);
 }
 
-function servoStop(pin)
-{
-    console.log("stop: "+pin);
-    switch (pin)
-    {
-        case CAM_Down:
-            digitalWrite(CAM_Up, HIGH);
-            break;
-        case CAM_Left:
-            digitalWrite(CAM_Right, HIGH);
-            break;
-        case CAM_Right:
-            digitalWrite(CAM_Left, HIGH);
-            break;
-        case CAM_Up:
-            digitalWrite(CAM_Down, HIGH);
-            break;
-    }
-}
-
-
 //open required pins
 //pins.open() --ect
 module.exports = function ()
@@ -124,7 +103,6 @@ module.exports = function ()
             {
                 if (on_off === 0)
                 {
-                    //servoStop(CAM_Up);
                     digitalWrite(CAM_Up,LOW);
                 }else{
                     console.log("Cam up start")
