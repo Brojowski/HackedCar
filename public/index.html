@@ -7,13 +7,13 @@
         <script src="/javascripts/app.js"></script>
         <script src="/javascripts/socket.io.js"></script>
         <style>
-            #stream{
+            #stream {
+                height: auto;
                 width: 100%;
-                height:auto;
             }
         </style>
     </head>
-    <body ng-app="">
-        <img id="stream" src="http://10.70.6.39:8000/?action=stream" />
+    <body ng-app="app" ng-controller="ctrlr" ng-keypress="send($event)">
+            <img id="stream" src="http://10.70.6.39:8000/?action=stream"/>
     </body>
 </html>

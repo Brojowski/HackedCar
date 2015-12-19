@@ -26,9 +26,12 @@ app.get('/', function (req, res)
     res.sendFile(__dirname + '/public/index.html');
 });
 
-+app.get('/commands', function (req, res)
+app.post('/commands', function (req, res)
 {
-    var cmd = req.body;
+    var cmd = req.body.cmd;
+    res.sendStatus(200);
+    cmd = cmd.toUpperCase();
+    console.log(cmd);
     switch (cmd)
     {
         case "W":
